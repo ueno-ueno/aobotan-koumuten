@@ -1,0 +1,126 @@
+// パスを修正
+@use "../foundation/variables" as var;
+@use "../foundation/setting" as set;
+@use "../foundation/component";
+@use "../foundation/utility";
+
+.aboutPage{
+  margin-bottom: 80px;
+}
+.aboutPge__about{
+  display: block;
+}
+
+.vision,.company{
+  margin-bottom: 80px;
+}
+
+.company__box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 82px;
+  @include set.mediaQuery(tab){
+    flex-direction: column;
+  }
+}
+
+.company__left{
+  width: 50%;
+  @include set.mediaQuery(tab){
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.company__text{
+  @include set.mediaQuery(tab){
+    font-size:1.4rem;
+}
+}
+
+.company__img{
+  width: 331px;
+}
+
+.company__right{
+  display: flex;
+  width: 43%;
+  @include set.mediaQuery(tab){
+    width: 100%;
+  justify-content: center;
+  text-align: center;
+  }
+}
+.company__name{
+  font-size: 3.2rem;
+  color: var.$blue;
+  font-weight: bold;
+}
+
+
+.company__outlineBox{
+  display: flex;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var.$paleGray;
+  @include set.mediaQuery(tab){
+    flex-direction: column;
+  }
+}
+
+.company__outlineName{
+width: 20%;
+font-weight: bold;
+@include set.mediaQuery(tab){
+  width: 100%;
+}
+}
+
+.company__outlineList{
+width: 70%;
+@include set.mediaQuery(tab){
+  width: 100%;
+}
+}
+
+.save{
+  margin-bottom: 195px;
+}
+.save__title{
+  font-size: 2.4rem;
+  font-weight: bold;
+  @include set.mediaQuery(tab){
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+}
+
+.save__imgBox{
+  width: 267px;
+  @include set.mediaQuery(tab){
+    width: 100%;
+  }
+}
+
+.save__contentBox{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 44px;
+  width: 100%;
+  @include set.mediaQuery(tab){
+    justify-content: center;
+  }
+}
+
+.save__text{
+width: 50%;
+@include set.mediaQuery(tab){
+  width: 100%;
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+}
+}
+.save__box{
+  margin-bottom: 30px;
+}

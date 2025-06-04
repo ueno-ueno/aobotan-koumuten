@@ -1,0 +1,86 @@
+
+@use "../foundation/variables" as var;
+@use "../foundation/setting" as set;
+@use "../foundation/component";
+@use "../foundation/utility";
+
+.service {
+  margin-bottom: 72px;
+  @include set.mediaQuery(tab){
+    margin-bottom: 120px;
+  }
+}
+
+.service__img {
+  display: inline-block;
+    width: 100%;
+    margin: 0 auto 56px;
+    
+  @include set.mediaQuery(tab){
+    margin-bottom: 24px;
+  }
+}
+
+.service__contentBox {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.service__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 39px;
+  @include set.mediaQuery(tab){
+    margin-bottom: 24px;
+  }
+}
+
+.service__textBox {
+  display: flex;
+  gap: 40px;
+  border-top: 2px solid var.$paleGray;
+  padding-top: 20px;
+  margin-bottom: 146px;
+
+  @include set.mediaQuery(tab) {
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+}
+
+.service__caption {
+  max-width: 100%;
+  width: 45%;
+  font-weight: bold;
+  @include set.mediaQuery(tab){
+    width: 100%;
+  }
+}
+
+.service__description {
+  width: 55%;
+  @include set.mediaQuery(tab){
+    width: 100%;
+  }
+}
+
+.service__listBox {
+  display: flex;
+  gap: 62px;
+  max-width: 88%;
+  @include set.mediaQuery(tab){
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.service__list {}
+
+.service__imgTitle {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.service__imgTime {}

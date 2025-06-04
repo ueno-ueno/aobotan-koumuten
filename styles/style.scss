@@ -1,0 +1,630 @@
+@use "foundation/variables" as var;
+@use "foundation/setting" as set;
+@use "foundation/component";
+@use "foundation/utility";
+@use "page/about";
+@use "page/service";
+@use "page/contact";
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Noto Sans JP", "メイリオ", "Meiryo", "MS ゴシック",
+    "ヒラギノ角ゴ ProN", "Kanit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0.07em;
+  display: flex;
+}
+
+.main {
+  margin-left: 20%;
+  width: 80%;
+  padding: 0 4%;
+  @include set.mediaQuery(pc) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+a:hover {
+  opacity: 0.7;
+}
+
+img {
+  // width: 100%;
+  max-width: 100%;
+}
+
+.header {
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  top: 252px;
+  left: 0;
+  padding: 40px;
+  z-index: 1500;
+  background-color: #fff;
+  @include set.mediaQuery(pc) {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 56px 4% 0;
+  }
+}
+.navOpen {
+  display: block;
+}
+
+// .mainvisual {
+// height: 100vh;
+// }
+
+.mainvisual--BgBlue {
+  background: url(/img/top/Rectangle\.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  @include set.mediaQuery(pc) {
+    background: none;
+  }
+}
+
+.mainvisual--imgBox {
+  object-fit: cover;
+  // max-width: 100%;
+}
+
+.mainvisual__img {
+  margin-bottom: -30px;
+  height: auto;
+  padding-top: 40px;
+  padding-right: 40px;
+  margin-bottom: 80px;
+  width: 100%;
+  @include set.mediaQuery(pc) {
+    padding-right: 0;
+    padding-top: 102px;
+  }
+}
+
+// .header__wrapper{
+// @include set.mediaQuery(tab){
+//   background-color: #fff;
+// }
+
+// }
+
+.header__logoBox {
+  position: fixed;
+  top: 74px;
+  left: 40px;
+  bottom: 0;
+  z-index: 1400;
+  display: inline-block;
+  @include set.mediaQuery(pc) {
+    top: 16px;
+    left: 4%;
+    z-index: 1600;
+  }
+}
+
+.header__logo {
+  max-width: 200px;
+  @include set.mediaQuery(pc) {
+    width: 98px;
+    display: inline-block;
+    margin-top: 5%;
+  }
+}
+
+.header__navTitleWrapper {
+  border-bottom: 1px solid var.$paleGray;
+  padding: 32px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  @include set.mediaQuery(pc) {
+    text-align: center;
+    border-bottom: none;
+    font-size: 1.6rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.header__navList02 {
+  display: none;
+  border-top: 1px solid var.$paleGray;
+  padding: 32px 0;
+  margin-top: 32px;
+  @include set.mediaQuery(pc) {
+    display: block;
+    border-top: none;
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+.header__navTitleOpen:hover .header__navList02 {
+  display: block;
+}
+.header__navTitle--top {
+  @include set.mediaQuery(pc) {
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+}
+
+.header__navItem {
+  font-size: 1.4rem;
+  @include set.mediaQuery(pc) {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+}
+
+.header__navItem:not(:last-child) {
+  margin-bottom: 24px;
+  @include set.mediaQuery(pc) {
+    margin-bottom: 0;
+  }
+}
+
+.header__navTitle {
+  cursor: pointer;
+  @include set.mediaQuery(pc) {
+    margin-bottom: 24px;
+    display: block;
+  }
+}
+
+.header__navTitleIcon {
+  margin-bottom: 5px;
+  margin-right: 8px;
+  width: 24px;
+}
+
+.header__hamburger {
+  width: 56px;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var.$blue;
+  display: none;
+  z-index: 1500;
+  @include set.mediaQuery(pc) {
+    display: block;
+  }
+}
+
+.header__hamburgerLine {
+  width: 32px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  &:nth-child(2) {
+    top: 24px;
+  }
+  &:nth-child(3) {
+    top: 36px;
+  }
+}
+
+.active .header__hamburgerLine {
+  &:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    display: none;
+  }
+
+  &:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+}
+
+.moveImg {
+  background-color: var.$gray;
+  padding: 63px 0 63px 48px;
+  position: relative;
+  margin-bottom: 85px;
+  @include set.mediaQuery(tab) {
+    margin-bottom: 200px;
+  }
+}
+
+.moveImg__box {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  @include set.mediaQuery(pc) {
+    align-items: center;
+  }
+}
+
+.moveImg__mainTextBox {
+  writing-mode: vertical-rl;
+  background-color: var.$gray;
+  padding: 16px 24px;
+}
+
+.moveImg__mainTextBlue {
+  color: var.$blue;
+  display: block;
+}
+
+.moveImg__mainText {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 2rem;
+  @include set.mediaQuery(pc) {
+    font-size: 2rem;
+  }
+}
+
+.moveImg__img {
+  width: 161px;
+  @include set.mediaQuery(pc) {
+    width: 60px;
+  }
+}
+
+.moveImg__box {
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  z-index: 200;
+
+  @include set.mediaQuery(pc) {
+    right: 5%;
+  }
+}
+
+.splide__img {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.splide__slide {
+  width: 100%;
+}
+
+.about {
+  margin-bottom: 85px;
+}
+
+.about__text {
+  max-width: 420px;
+  text-align: justify;
+  line-height: 2;
+  margin-bottom: 40px;
+}
+.topService {
+  width: 100%;
+  //  kasuya修正
+  position: relative;
+}
+
+.topService__bg {
+  background-color: var.$gray;
+  padding-bottom: 100px;
+  margin-bottom: 107px;
+  border-radius: 50px 0 0 50px;
+  // kasuya修正
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  margin-left: auto;
+  @include set.mediaQuery(tab) {
+    width: 80%;
+  }
+}
+
+.topService__content {
+  // kasuya修正
+  position: relative;
+  max-width: 1200px;
+  margin: left;
+}
+
+.topService__box {
+  display: flex;
+  margin-bottom: 92px;
+  width: 100%;
+  gap: 24px;
+  @include set.mediaQuery(tab) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.topService__boxEven {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 24px;
+  @include set.mediaQuery(tab) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.topService__imgArea {
+  width: 50%;
+  z-index: 90;
+  @include set.mediaQuery(tab) {
+    width: 100%;
+  }
+}
+
+.topService__caption {
+  width: 50%;
+  @include set.mediaQuery(tab) {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.topService__caption--even {
+  margin-right: auto;
+  @include set.mediaQuery(tab) {
+    margin-right: 0;
+  }
+}
+
+.topService__title {
+  font-size: 2.4rem;
+  margin-bottom: 45px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+// トップページのセクションタイトルで使用
+.topService__title--number {
+  font-size: 4.8rem;
+  font-weight: bold;
+  color: #b1c6dc;
+  line-height: 1;
+  font-family: "Kanit", sans-serif;
+  display: none;
+
+  @include set.mediaQuery(tab) {
+    display: block;
+  }
+}
+
+.topService__text {
+  line-height: 2;
+  margin-bottom: 28px;
+  text-align: justify;
+}
+
+.news {
+  margin-bottom: 132px;
+}
+
+.news__item {
+  padding: 32px 0;
+  border-top: 1px solid var.$paleGray;
+}
+
+.news__category {
+  display: inline-block;
+  color: var.$blue;
+  border: 1px solid var.$paleGray;
+  font-size: 1.4rem;
+  padding: 5px 16px;
+  margin-right: 16px;
+}
+
+.news__time {
+  color: var.$blue;
+}
+
+.news__item:last-child {
+  border-bottom: 1px solid var.$paleGray;
+}
+
+.news__text {
+  margin-top: 24px;
+  font-weight: bold;
+}
+
+// モーダル
+.news__modalList {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  display: none;
+}
+
+.news__modalExplain {
+  margin-bottom: 61px;
+}
+
+.modalOpen {
+  display: block;
+}
+
+.news__itemBox {
+  cursor: pointer;
+}
+
+.news__modalItem {
+  background-color: #fff;
+  max-width: 860px;
+  padding: 24px 102px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.news__modalText {
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.news__modalImgBox {
+  margin-bottom: 35px;
+}
+
+.news__closeButtonBox {
+  text-align: center;
+}
+
+.contact {
+  background-color: var.$gray;
+  border-radius: 50px 0 0 50px;
+  padding: 32px 0 61px 20px;
+  margin-bottom: 117px;
+  position: relative;
+}
+
+.contact__list {
+  display: flex;
+  @include set.mediaQuery(pc) {
+    flex-direction: column;
+    margin-bottom: 36px;
+  }
+}
+
+.contact__en {
+  display: block;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-family: "Kanit", sans-serif;
+}
+
+.contact__ja {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.contact__item {
+  padding-right: 32px;
+  border-right: 1px solid #000;
+  margin-right: 32px;
+
+  @include set.mediaQuery(pc) {
+    border-right: none;
+    margin-bottom: 24px;
+    &:nth-child(1) {
+      border-bottom: 1px solid #000;
+    }
+  }
+}
+
+.contact__box {
+  display: flex;
+  @include set.mediaQuery(pc) {
+    flex-direction: column;
+  }
+}
+
+.contact__img {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  max-width: 150px;
+  @include set.mediaQuery(tab) {
+    width: 59px;
+    top: -7%;
+  }
+}
+
+.footer {
+  @include set.mediaQuery(pc) {
+    text-align: center;
+  }
+}
+
+.footer__box {
+  display: flex;
+  column-gap: 100px;
+  margin-bottom: 8px;
+  @include set.mediaQuery(pc) {
+    flex-direction: column;
+  }
+}
+
+.footer__logo {
+  margin-bottom: 40px;
+  width: 222px;
+}
+.footer__leftList {
+  @include set.mediaQuery(pc) {
+    font-size: 1.2rem;
+    margin-bottom: 66px;
+  }
+}
+
+.footer__leftItemTitle {
+  margin-right: 16px;
+}
+
+.footer__leftItem:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.footer__right {
+  padding-top: 25px;
+  @include set.mediaQuery(pc) {
+    margin-bottom: 58px;
+  }
+}
+
+.footer__rightListBox {
+  display: flex;
+  column-gap: 24px;
+  @include set.mediaQuery(pc) {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+}
+
+.footer__rightList:not(:last-child) {
+  margin-bottom: 40px;
+  @include set.mediaQuery(pc) {
+    margin-bottom: 24px;
+  }
+}
+
+.footer__rightListItem {
+  font-weight: bold;
+}
+
+.footer__copyRight {
+  margin-bottom: 26px;
+  text-align: right;
+  margin-right: 56px;
+  @include set.mediaQuery(pc) {
+    text-align: center;
+    margin-right: 0;
+  }
+}

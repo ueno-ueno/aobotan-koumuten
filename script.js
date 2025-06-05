@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
       modal.classList.add('modalOpen');
     });
 
-    closeButton.addEventListener('click', (event) => {
+    modal.addEventListener('click', (event) => {
       event.stopPropagation();
       modal.classList.remove('modalOpen');
     });

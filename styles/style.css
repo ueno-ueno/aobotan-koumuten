@@ -28,6 +28,11 @@
   align-items: center;
   margin-bottom: 57px;
 }
+@media screen and (max-width: 430px) {
+  .c-eachTopSection--flex {
+    flex-direction: column;
+  }
+}
 
 .c-eachSection--text {
   width: 422px;
@@ -448,6 +453,12 @@
   display: flex;
   gap: 52px;
 }
+@media screen and (max-width: 430px) {
+  .contactPage__twinBtnList {
+    flex-direction: column;
+    gap: 49px;
+  }
+}
 
 .contactPage__twinBtnItem {
   width: 209px;
@@ -471,6 +482,14 @@
   top: 50%;
   left: -54px;
   background-color: #4282b8;
+}
+@media screen and (max-width: 720px) {
+  .contactPage__twinBtnItemWhite::before {
+    rotate: 90deg;
+    top: 0;
+    left: 38%;
+    transform: translateX(-50%);
+  }
 }
 
 .contactPage__twinText {
@@ -1110,6 +1129,7 @@ img {
   line-height: 2;
   margin-bottom: 28px;
   text-align: justify;
+  padding-right: 4%;
 }
 
 .news {
@@ -1176,9 +1196,15 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 720px) {
+  .news__modalItem {
+    padding: 16px 24px;
+    width: 90%;
+  }
+}
 
 .news__modalText {
-  font-size: 2.4rem;
+  font-size: clamp(1.4rem, 1.036rem + 1.82vw, 2.4rem);
   margin-bottom: 1.6rem;
 }
 
@@ -1339,4 +1365,29 @@ img {
     text-align: center;
     margin-right: 0;
   }
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #b1c6dc;
+  border-radius: 4px;
+  font-size: 1.6rem;
+}
+@media screen and (max-width: 1080px) {
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  textarea {
+    font-size: 1.4rem;
+  }
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
 }/*# sourceMappingURL=style.css.map */

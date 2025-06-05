@@ -11,6 +11,11 @@
 .contactPage__twinBtnList {
   display: flex;
   gap: 52px;
+
+  @include set.mediaQuery(sp) {
+    flex-direction: column;
+    gap: 49px;
+  }
 }
 
 .contactPage__twinBtnItem {
@@ -36,6 +41,12 @@
     left: -54px;
     background-color: var.$blue;
 
+    @include set.mediaQuery(tab) {
+      rotate: 90deg;
+      top: 0;
+      left: 38%;
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -48,14 +59,16 @@
   gap: 52px;
   align-items: center;
   margin-bottom: 62px;
-  @include set.mediaQuery(tab){
+
+  @include set.mediaQuery(tab) {
     flex-direction: column;
   }
 }
 
 .contactPage__telNumList {
   font-weight: bold;
-  @include set.mediaQuery(tab){
+
+  @include set.mediaQuery(tab) {
     text-align: center;
   }
 }

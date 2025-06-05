@@ -27,11 +27,13 @@ body {
   margin-left: 20%;
   width: 80%;
   padding: 0 4%;
+
   @include set.mediaQuery(pc) {
     width: 100%;
     margin-left: 0;
   }
 }
+
 a:hover {
   opacity: 0.7;
 }
@@ -54,6 +56,7 @@ img {
   padding: 40px;
   z-index: 1500;
   background-color: #fff;
+
   @include set.mediaQuery(pc) {
     display: none;
     width: 100%;
@@ -67,29 +70,32 @@ img {
 }
 
 .mainvisual {
-position: relative;
+  position: relative;
 }
 
 @keyframes scrollDown {
   0% {
     transform: translateX(-50%) translateY(0);
   }
+
   50% {
     transform: translateX(-50%) translateY(15px);
   }
+
   100% {
     transform: translateX(-50%) translateY(0);
   }
 }
 
-.mainvisual-scrollDown{
+.mainvisual-scrollDown {
   position: absolute;
   bottom: 12%;
   left: 4%;
   color: var.$blue;
   font-size: 1.2rem;
   font-weight: bold;
-  &::after{
+
+  &::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -108,6 +114,7 @@ position: relative;
   background: url(/img/top/Rectangle\.png);
   background-repeat: no-repeat;
   background-position: top right;
+
   @include set.mediaQuery(pc) {
     background: none;
   }
@@ -125,6 +132,7 @@ position: relative;
   padding-right: 40px;
   margin-bottom: 80px;
   width: 100%;
+
   @include set.mediaQuery(pc) {
     padding-right: 0;
     padding-top: 102px;
@@ -145,6 +153,7 @@ position: relative;
   bottom: 0;
   z-index: 1400;
   display: inline-block;
+
   @include set.mediaQuery(pc) {
     top: 16px;
     left: 4%;
@@ -154,6 +163,7 @@ position: relative;
 
 .header__logo {
   max-width: 200px;
+
   @include set.mediaQuery(pc) {
     width: 98px;
     display: inline-block;
@@ -166,6 +176,7 @@ position: relative;
   padding: 32px 0;
   font-size: 2rem;
   font-weight: bold;
+
   @include set.mediaQuery(pc) {
     text-align: center;
     border-bottom: none;
@@ -173,10 +184,12 @@ position: relative;
     padding-top: 0;
     padding-bottom: 0;
   }
+
   &:first-child {
     .header__navTitle--top {
       display: none;
-       @include set.mediaQuery(pc) {
+
+      @include set.mediaQuery(pc) {
         display: block;
       }
     }
@@ -188,6 +201,7 @@ position: relative;
   border-top: 1px solid var.$paleGray;
   padding: 32px 0;
   margin-top: 32px;
+
   @include set.mediaQuery(pc) {
     display: block;
     border-top: none;
@@ -198,7 +212,7 @@ position: relative;
 
 .header__navTitleOpen {
   .header__navTitle--top {
-    &::after{
+    &::after {
       content: "";
       display: block;
       position: absolute;
@@ -208,11 +222,13 @@ position: relative;
       height: 1px;
       background-color: var.$blue;
       transition: transform 0.3s ease;
+
       @include set.mediaQuery(pc) {
         display: none;
       }
     }
-    &::before{
+
+    &::before {
       content: "";
       display: block;
       position: absolute;
@@ -223,17 +239,20 @@ position: relative;
       background-color: var.$blue;
       transform: rotate(90deg);
       transition: transform 0.3s ease;
+
       @include set.mediaQuery(pc) {
         display: none;
       }
     }
   }
+
   &.is-open {
     .header__navTitle--top {
       &::before {
         transform: rotate(0deg);
       }
     }
+
     .header__navList02 {
       display: block;
     }
@@ -243,6 +262,7 @@ position: relative;
 .header__navTitle--top {
   position: relative;
   cursor: pointer;
+
   @include set.mediaQuery(pc) {
     margin-bottom: 24px;
     display: inline-block;
@@ -251,6 +271,7 @@ position: relative;
 
 .header__navItem {
   font-size: 1.4rem;
+
   @include set.mediaQuery(pc) {
     font-size: 1.6rem;
     margin-bottom: 24px;
@@ -259,6 +280,7 @@ position: relative;
 
 .header__navItem:not(:last-child) {
   margin-bottom: 24px;
+
   @include set.mediaQuery(pc) {
     margin-bottom: 0;
   }
@@ -266,6 +288,7 @@ position: relative;
 
 .header__navTitle {
   cursor: pointer;
+
   @include set.mediaQuery(pc) {
     margin-bottom: 24px;
     display: block;
@@ -287,6 +310,7 @@ position: relative;
   background-color: var.$blue;
   display: none;
   z-index: 1500;
+
   @include set.mediaQuery(pc) {
     display: block;
   }
@@ -300,9 +324,11 @@ position: relative;
   top: 12px;
   left: 12px;
   transition: all 0.4s ease-in-out;
+
   &:nth-child(2) {
     top: 24px;
   }
+
   &:nth-child(3) {
     top: 36px;
   }
@@ -327,6 +353,7 @@ position: relative;
   padding: 63px 0 63px 48px;
   position: relative;
   margin-bottom: 85px;
+
   @include set.mediaQuery(tab) {
     margin-bottom: 200px;
   }
@@ -336,6 +363,7 @@ position: relative;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
+
   @include set.mediaQuery(pc) {
     align-items: center;
   }
@@ -356,6 +384,7 @@ position: relative;
   font-size: 4rem;
   font-weight: bold;
   letter-spacing: 2rem;
+
   @include set.mediaQuery(pc) {
     font-size: 2rem;
   }
@@ -363,6 +392,7 @@ position: relative;
 
 .moveImg__img {
   width: 161px;
+
   @include set.mediaQuery(pc) {
     width: 60px;
   }
@@ -400,6 +430,7 @@ position: relative;
   line-height: 2;
   margin-bottom: 40px;
 }
+
 .topService {
   width: 100%;
   //  kasuya修正
@@ -418,6 +449,7 @@ position: relative;
   right: 0;
   width: 80%;
   margin-left: auto;
+
   @include set.mediaQuery(tab) {
     width: 80%;
   }
@@ -435,6 +467,7 @@ position: relative;
   margin-bottom: 92px;
   width: 100%;
   gap: 24px;
+
   @include set.mediaQuery(tab) {
     flex-direction: column;
     align-items: center;
@@ -446,6 +479,7 @@ position: relative;
   display: flex;
   flex-direction: row-reverse;
   gap: 24px;
+
   @include set.mediaQuery(tab) {
     flex-direction: column;
     align-items: center;
@@ -456,6 +490,7 @@ position: relative;
 .topService__imgArea {
   width: 50%;
   z-index: 90;
+
   @include set.mediaQuery(tab) {
     width: 100%;
   }
@@ -463,6 +498,7 @@ position: relative;
 
 .topService__caption {
   width: 50%;
+
   @include set.mediaQuery(tab) {
     width: 100%;
     padding-left: 0;
@@ -472,6 +508,7 @@ position: relative;
 
 .topService__caption--even {
   margin-right: auto;
+
   @include set.mediaQuery(tab) {
     margin-right: 0;
   }
@@ -502,6 +539,7 @@ position: relative;
   line-height: 2;
   margin-bottom: 28px;
   text-align: justify;
+  padding-right: 4%;
 }
 
 .news {
@@ -568,10 +606,15 @@ position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @include set.mediaQuery(tab) {
+    padding: 16px 24px;
+    width: 90%;
+  }
 }
 
 .news__modalText {
-  font-size: 2.4rem;
+  font-size: clamp(1.4rem, 1.036rem + 1.82vw, 2.4rem);
   margin-bottom: 1.6rem;
 }
 
@@ -593,6 +636,7 @@ position: relative;
 
 .contact__list {
   display: flex;
+
   @include set.mediaQuery(pc) {
     flex-direction: column;
     margin-bottom: 36px;
@@ -619,6 +663,7 @@ position: relative;
   @include set.mediaQuery(pc) {
     border-right: none;
     margin-bottom: 24px;
+
     &:nth-child(1) {
       border-bottom: 1px solid #000;
     }
@@ -627,6 +672,7 @@ position: relative;
 
 .contact__box {
   display: flex;
+
   @include set.mediaQuery(pc) {
     flex-direction: column;
   }
@@ -637,6 +683,7 @@ position: relative;
   top: 4%;
   right: 4%;
   max-width: 150px;
+
   @include set.mediaQuery(tab) {
     width: 59px;
     top: -7%;
@@ -653,6 +700,7 @@ position: relative;
   display: flex;
   column-gap: 100px;
   margin-bottom: 8px;
+
   @include set.mediaQuery(pc) {
     flex-direction: column;
   }
@@ -662,6 +710,7 @@ position: relative;
   margin-bottom: 40px;
   width: 222px;
 }
+
 .footer__leftList {
   @include set.mediaQuery(pc) {
     font-size: 1.2rem;
@@ -679,6 +728,7 @@ position: relative;
 
 .footer__right {
   padding-top: 25px;
+
   @include set.mediaQuery(pc) {
     margin-bottom: 58px;
   }
@@ -687,6 +737,7 @@ position: relative;
 .footer__rightListBox {
   display: flex;
   column-gap: 24px;
+
   @include set.mediaQuery(pc) {
     flex-direction: column;
     row-gap: 24px;
@@ -695,6 +746,7 @@ position: relative;
 
 .footer__rightList:not(:last-child) {
   margin-bottom: 40px;
+
   @include set.mediaQuery(pc) {
     margin-bottom: 24px;
   }
@@ -708,8 +760,30 @@ position: relative;
   margin-bottom: 26px;
   text-align: right;
   margin-right: 56px;
+
   @include set.mediaQuery(pc) {
     text-align: center;
     margin-right: 0;
   }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid var.$paleGray;
+  border-radius: 4px;
+  font-size: 1.6rem;
+
+  @include set.mediaQuery(pc) {
+    font-size: 1.4rem;
+  }
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
 }

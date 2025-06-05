@@ -57,19 +57,52 @@ img {
   @include set.mediaQuery(pc) {
     display: none;
     width: 100%;
-    position: absolute;
     top: 0;
-    left: 0;
     padding: 56px 4% 0;
   }
 }
+
 .navOpen {
   display: block;
 }
 
-// .mainvisual {
-// height: 100vh;
-// }
+.mainvisual {
+position: relative;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(15px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.mainvisual-scrollDown{
+  position: absolute;
+  bottom: 12%;
+  left: 4%;
+  color: var.$blue;
+  font-size: 1.2rem;
+  font-weight: bold;
+  &::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+    display: block;
+    width: 1px;
+    height: 72px;
+    background-color: var.$blue;
+    margin-top: 12px;
+    animation: scrollDown 2s ease-in-out infinite;
+  }
+}
 
 .mainvisual--BgBlue {
   background: url(/img/top/Rectangle\.png);
@@ -140,6 +173,14 @@ img {
     padding-top: 0;
     padding-bottom: 0;
   }
+  &:first-child {
+    .header__navTitle--top {
+      display: none;
+       @include set.mediaQuery(pc) {
+        display: block;
+      }
+    }
+  }
 }
 
 .header__navList02 {
@@ -155,10 +196,53 @@ img {
   }
 }
 
-.header__navTitleOpen:hover .header__navList02 {
-  display: block;
+.header__navTitleOpen {
+  .header__navTitle--top {
+    &::after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 4%;
+      width: 24px;
+      height: 1px;
+      background-color: var.$blue;
+      transition: transform 0.3s ease;
+      @include set.mediaQuery(pc) {
+        display: none;
+      }
+    }
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 4%;
+      width: 24px;
+      height: 1px;
+      background-color: var.$blue;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease;
+      @include set.mediaQuery(pc) {
+        display: none;
+      }
+    }
+  }
+  &.is-open {
+    .header__navTitle--top {
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+    .header__navList02 {
+      display: block;
+    }
+  }
 }
+
 .header__navTitle--top {
+  position: relative;
+  cursor: pointer;
   @include set.mediaQuery(pc) {
     margin-bottom: 24px;
     display: inline-block;
@@ -215,6 +299,7 @@ img {
   position: absolute;
   top: 12px;
   left: 12px;
+  transition: all 0.4s ease-in-out;
   &:nth-child(2) {
     top: 24px;
   }
@@ -229,7 +314,7 @@ img {
   }
 
   &:nth-child(2) {
-    display: none;
+    opacity: 0;
   }
 
   &:nth-child(3) {

@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/*
-以前の書き方の問題点：
-1. screen and をマップの値に含めていたため、文字列として正しく解釈されなかった
-2. @media ディレクティブ内で map-get の結果を直接展開すると、構文エラーが発生
-3. メディアクエリの条件部分のみを文字列として定義し、screen and は @mixin 内で追加するのが正しい書き方
-*/
 .c-sectionTitle {
   margin-bottom: 47px;
 }
@@ -1237,9 +1231,10 @@ img {
 
 .contact__en {
   display: block;
-  font-size: 3.2rem;
+  font-size: 2.9rem;
   line-height: 1;
   font-family: "Kanit", sans-serif;
+  background-color: #b1c6dc;
 }
 
 .contact__ja {

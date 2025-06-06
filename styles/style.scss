@@ -364,17 +364,26 @@ img {
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
+  height: auto;
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  z-index: 200;
 
   @include set.mediaQuery(pc) {
     align-items: center;
+    right: 5%;
+    top: 75%;
   }
 }
+
 
 .moveImg__mainTextBox {
   writing-mode: vertical-rl;
   background-color: var.$gray;
   padding: 16px 24px;
 }
+
 
 .moveImg__mainTextBlue {
   color: var.$blue;
@@ -387,7 +396,7 @@ img {
   letter-spacing: 2rem;
 
   @include set.mediaQuery(pc) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -399,16 +408,7 @@ img {
   }
 }
 
-.moveImg__box {
-  position: absolute;
-  top: 60%;
-  right: 10%;
-  z-index: 200;
 
-  @include set.mediaQuery(pc) {
-    right: 5%;
-  }
-}
 
 .splide__img {
   object-fit: cover;

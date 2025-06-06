@@ -951,10 +951,17 @@ img {
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
+  height: auto;
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  z-index: 200;
 }
 @media screen and (max-width: 1080px) {
   .moveImg__box {
     align-items: center;
+    right: 5%;
+    top: 75%;
   }
 }
 
@@ -976,7 +983,7 @@ img {
 }
 @media screen and (max-width: 1080px) {
   .moveImg__mainText {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -986,18 +993,6 @@ img {
 @media screen and (max-width: 1080px) {
   .moveImg__img {
     width: 60px;
-  }
-}
-
-.moveImg__box {
-  position: absolute;
-  top: 60%;
-  right: 10%;
-  z-index: 200;
-}
-@media screen and (max-width: 1080px) {
-  .moveImg__box {
-    right: 5%;
   }
 }
 

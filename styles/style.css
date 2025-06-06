@@ -536,7 +536,7 @@
 }
 
 .formArea {
-  width: 447px;
+  max-width: 447px;
   font-weight: bold;
 }
 

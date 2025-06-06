@@ -35,11 +35,16 @@
 }
 
 .c-eachSection--text {
-  width: 422px;
+  max-width: 422px;
+}
+@media screen and (max-width: 430px) {
+  .c-eachSection--text {
+    margin-bottom: 24px;
+  }
 }
 
 .c-eachTopSection--img {
-  width: 165px;
+  max-width: 165px;
 }
 
 .c-readButton {
@@ -705,7 +710,7 @@ img {
 }
 
 .mainvisual--BgBlue {
-  background: url(/img/top/Rectangle\.png);
+  background: url(/img/top/Rectangle.png);
   background-repeat: no-repeat;
   background-position: top right;
 }

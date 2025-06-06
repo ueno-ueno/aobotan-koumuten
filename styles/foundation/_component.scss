@@ -35,11 +35,15 @@
 }
 
 .c-eachSection--text {
-  width: 422px;
+  max-width: 422px;
+
+  @include set.mediaQuery(sp) {
+    margin-bottom: 24px;
+  }
 }
 
 .c-eachTopSection--img {
-  width: 165px;
+  max-width: 165px;
 }
 
 // トップページのreadMoreボタン
